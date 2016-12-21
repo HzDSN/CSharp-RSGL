@@ -168,5 +168,9 @@ namespace WindowsFormsApplication1
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+        private void Sut_Save_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -84,9 +84,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -112,6 +112,7 @@
             this.Sut_Save.TabIndex = 4;
             this.Sut_Save.Text = "保存";
             this.Sut_Save.UseVisualStyleBackColor = true;
+            this.Sut_Save.Click += new System.EventHandler(this.Sut_Save_Click);
             // 
             // Sut_Cancel
             // 
@@ -635,6 +636,16 @@
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(6, 17);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(157, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
@@ -654,16 +665,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(709, 21);
             this.textBox2.TabIndex = 8;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(6, 17);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(157, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ManFile
             // 
