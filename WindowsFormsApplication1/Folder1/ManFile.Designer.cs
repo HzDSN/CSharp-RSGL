@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManFile));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.Sut_Save = new System.Windows.Forms.Button();
             this.Sut_Cancel = new System.Windows.Forms.Button();
@@ -72,13 +71,8 @@
             this.Col_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.N_Next = new System.Windows.Forms.Button();
-            this.N_Previous = new System.Windows.Forms.Button();
-            this.N_First = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.N_Cauda = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -94,7 +88,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.S_Photo)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -112,7 +105,6 @@
             this.Sut_Save.TabIndex = 4;
             this.Sut_Save.Text = "保存";
             this.Sut_Save.UseVisualStyleBackColor = true;
-            this.Sut_Save.Click += new System.EventHandler(this.Sut_Save_Click);
             // 
             // Sut_Cancel
             // 
@@ -132,6 +124,7 @@
             this.Sut_Delete.TabIndex = 2;
             this.Sut_Delete.Text = "删除";
             this.Sut_Delete.UseVisualStyleBackColor = true;
+            this.Sut_Delete.Click += new System.EventHandler(this.Sut_Delete_Click_1);
             // 
             // Sut_Amend
             // 
@@ -267,6 +260,7 @@
             this.S_8.Name = "S_8";
             this.S_8.Size = new System.Drawing.Size(316, 21);
             this.S_8.TabIndex = 31;
+            this.S_8.TextChanged += new System.EventHandler(this.S_8_TextChanged);
             // 
             // S_4
             // 
@@ -287,7 +281,6 @@
             this.S_0.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.S_0.Location = new System.Drawing.Point(73, 13);
             this.S_0.Name = "S_0";
-            this.S_0.ReadOnly = true;
             this.S_0.Size = new System.Drawing.Size(58, 21);
             this.S_0.TabIndex = 25;
             // 
@@ -503,46 +496,16 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_ID,
             this.Col_StuffName});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 46);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 20);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(157, 198);
+            this.dataGridView1.Size = new System.Drawing.Size(157, 224);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // N_Next
-            // 
-            this.N_Next.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("N_Next.BackgroundImage")));
-            this.N_Next.Location = new System.Drawing.Point(130, 18);
-            this.N_Next.Name = "N_Next";
-            this.N_Next.Size = new System.Drawing.Size(58, 23);
-            this.N_Next.TabIndex = 2;
-            this.N_Next.UseVisualStyleBackColor = true;
-            this.N_Next.Click += new System.EventHandler(this.N_Next_Click);
-            // 
-            // N_Previous
-            // 
-            this.N_Previous.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("N_Previous.BackgroundImage")));
-            this.N_Previous.Enabled = false;
-            this.N_Previous.Location = new System.Drawing.Point(73, 18);
-            this.N_Previous.Name = "N_Previous";
-            this.N_Previous.Size = new System.Drawing.Size(57, 23);
-            this.N_Previous.TabIndex = 1;
-            this.N_Previous.UseVisualStyleBackColor = true;
-            // 
-            // N_First
-            // 
-            this.N_First.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("N_First.BackgroundImage")));
-            this.N_First.Enabled = false;
-            this.N_First.Location = new System.Drawing.Point(16, 18);
-            this.N_First.Name = "N_First";
-            this.N_First.Size = new System.Drawing.Size(57, 23);
-            this.N_First.TabIndex = 0;
-            this.N_First.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -559,28 +522,6 @@
             this.label3.Size = new System.Drawing.Size(65, 12);
             this.label3.TabIndex = 4;
             this.label3.Text = "当前记录：";
-            // 
-            // N_Cauda
-            // 
-            this.N_Cauda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("N_Cauda.BackgroundImage")));
-            this.N_Cauda.Location = new System.Drawing.Point(188, 18);
-            this.N_Cauda.Name = "N_Cauda";
-            this.N_Cauda.Size = new System.Drawing.Size(57, 23);
-            this.N_Cauda.TabIndex = 3;
-            this.N_Cauda.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.N_Cauda);
-            this.groupBox2.Controls.Add(this.N_Next);
-            this.groupBox2.Controls.Add(this.N_Previous);
-            this.groupBox2.Controls.Add(this.N_First);
-            this.groupBox2.Location = new System.Drawing.Point(472, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(269, 46);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "浏览按钮";
             // 
             // label1
             // 
@@ -627,7 +568,6 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Location = new System.Drawing.Point(12, 58);
@@ -638,23 +578,24 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(6, 17);
+            this.button2.Location = new System.Drawing.Point(464, 13);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(157, 23);
             this.button2.TabIndex = 9;
-            this.button2.Text = "button2";
+            this.button2.Text = "查询";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(454, 45);
+            this.groupBox1.Size = new System.Drawing.Size(627, 45);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "分类查询";
@@ -674,7 +615,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "ManFile";
@@ -689,7 +629,6 @@
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -712,13 +651,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_ID;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button N_Next;
-        private System.Windows.Forms.Button N_Previous;
-        private System.Windows.Forms.Button N_First;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button N_Cauda;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;

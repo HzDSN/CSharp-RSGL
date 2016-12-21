@@ -13,6 +13,8 @@ namespace WindowsFormsApplication1
 {
     public partial class ManFile : Form
     {
+        static string strcon = "Server=DESKTOP-RGQI6KB;Database=RSGL;uid=sa;pwd=123456";
+        SqlConnection conn = new SqlConnection(strcon);
         public ManFile()
         {
             InitializeComponent();
@@ -25,23 +27,23 @@ namespace WindowsFormsApplication1
         }
 
 
-        private void ManFile_Load(object sender, EventArgs e)
+        /*
+         * private void ManFile_Load(object sender, EventArgs e)
         {
-            /* SqlConnection lo_conn = new SqlConnection("Server=DESKTOP-RGQI6KB;Database=RSGL;uid=sa;pwd=123456");
-             lo_conn.Open();
-             SqlCommand lo_cmd = new SqlCommand("select * from employee where e_age =19", lo_conn);
-             SqlDataReader lo_reader = lo_cmd.ExecuteReader();
-             textBox1.Text = "1";
-             if (lo_reader.HasRows)
-             {
-                 while (lo_reader.Read())
-                 {
-                     textBox2.Text += lo_reader["e_number"];
-                 }
-             }*/
-
-
+            SqlConnection lo_conn = new SqlConnection("Server=DESKTOP-RGQI6KB;Database=RSGL;uid=sa;pwd=123456");
+            lo_conn.Open();
+            SqlCommand lo_cmd = new SqlCommand("select * from employee where e_age =19", lo_conn);
+            SqlDataReader lo_reader = lo_cmd.ExecuteReader();
+            textBox1.Text = "1";
+            if (lo_reader.HasRows)
+            {
+                while (lo_reader.Read())
+                {
+                    textBox2.Text += lo_reader["e_number"];
+                }
+            }
         }
+        */
 
         private void Sut_Add_Click(object sender, EventArgs e)
         {
@@ -80,7 +82,28 @@ namespace WindowsFormsApplication1
 
         private void Sut_Add_Click_1(object sender, EventArgs e)
         {
+            string bh, xm, mz, sr, nl, xb, wh, zz, sf, ad, sz, sj;
+            bh = "'" + S_0.Text + "'";
+            xm = "'" + S_1.Text + "'";
+            mz = "'" + S_2.Text + "'";
+            DateTime a = Convert.ToDateTime(S_3.Text);
+            S_3.Text = a.Year + "-" + a.Month + "-" + a.Day;
+            sr = "'" + S_3.Text + "'";
+            nl = S_4.Text;
+            xb = "'" + S_5.Text + "'";
+            wh = "'" + S_6.Text + "'";
+            zz = "'" + S_7.Text + "'";
+            sf = "'" + S_8.Text + "'";
+            ad = "'" + S_9.Text + "'";
+            sz = S_10.Text;
+            sj = "'" + S_11.Text + "'";
 
+
+            conn.ConnectionString = strcon;
+            SqlCommand cmd = new SqlCommand("insert into employee(e_number,e_name,e_nation,e_birthday,e_age,e_gender,e_education,e_political,e_IDnumber,e_homeaddress,e_salary,e_telephonenumber) values(" + bh + "," + xm + "," + mz + "," + sr + "," + nl + "," + xb + "," + wh + "," + zz + "," + sf + "," + ad + "," + sz + "," + sj + ")", conn);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
 
         private void N_Next_Click(object sender, EventArgs e)
@@ -90,11 +113,25 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string tj=string.Empty;
+            S_0.Text = string.Empty;
+            S_1.Text = string.Empty;
+            S_2.Text = string.Empty;
+            S_3.Text = string.Empty;
+            S_4.Text = string.Empty;
+            S_5.Text = string.Empty;
+            S_6.Text = string.Empty;
+            S_7.Text = string.Empty;
+            S_8.Text = string.Empty;
+            S_9.Text = string.Empty;
+            S_10.Text = string.Empty;
+            S_11.Text = string.Empty;
+
+
+            string tj = string.Empty;
             switch (comboBox1.Text)
             {
-                case "按工号查询":tj = "e_number"; break;
-                case "按姓名查询": tj = "e_name";break;
+                case "按工号查询": tj = "e_number"; break;
+                case "按姓名查询": tj = "e_name"; break;
                 case "按性别查询": tj = "e_gender"; break;
                 case "按民族查询": tj = "e_nation"; break;
                 case "按文化程度查询": tj = "e_education"; break;
@@ -103,9 +140,9 @@ namespace WindowsFormsApplication1
             }
 
 
-            SqlConnection lo_conn = new SqlConnection("Server=DESKTOP-RGQI6KB;Database=RSGL;uid=sa;pwd=123456");
-            lo_conn.Open();
-            SqlCommand lo_cmd = new SqlCommand("select * from employee where "+ tj + "= "+ "'" + comboBox2.Text + "'", lo_conn);
+            SqlCommand lo_cmd = new SqlCommand("select * from employee where " + tj + "= " + "'" + comboBox2.Text + "'", conn);
+            conn.Open();
+
             SqlDataReader lo_reader = lo_cmd.ExecuteReader();
             textBox1.Text = "1";
             if (lo_reader.HasRows)
@@ -127,6 +164,7 @@ namespace WindowsFormsApplication1
                     textBox2.Text += lo_reader["e_number"];
                 }
             }
+            conn.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -147,8 +185,7 @@ namespace WindowsFormsApplication1
             mz = "e_nation='" + S_2.Text + "'";
             DateTime a = Convert.ToDateTime(S_3.Text);
             S_3.Text = a.Year + "-" + a.Month + "-" + a.Day;
-            sr = "e_birthday='" + S_3.Text +"'";
-            
+            sr = "e_birthday='" + S_3.Text + "'";
             nl = "e_age=" + S_4.Text;
             xb = "e_gender='" + S_5.Text + "'";
             wh = "e_education='" + S_6.Text + "'";
@@ -160,17 +197,28 @@ namespace WindowsFormsApplication1
 
             textBox2.Text = sr;
 
-            string strcon ="Server=DESKTOP-RGQI6KB;Database=RSGL;uid=sa;pwd=123456";
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = strcon;  
-            SqlCommand cmd = new SqlCommand("update employee set " +bh + "," + xm + ","+ mz + "," + sr + "," + nl + "," + xb + "," + wh + "," + zz + "," + sf + "," + ad + "," + sz + "," + sj+ " where e_number='0003'", conn);
+
+            SqlCommand cmd = new SqlCommand("update employee set " + bh + "," + xm + "," + mz + "," + sr + "," + nl + "," + xb + "," + wh + "," + zz + "," + sf + "," + ad + "," + sz + "," + sj + " where " + bh, conn);
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-        private void Sut_Save_Click(object sender, EventArgs e)
+
+        private void S_8_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Sut_Delete_Click_1(object sender, EventArgs e)
+        {
+            string bh;
+            bh = "'" + S_0.Text + "'";
+
+
+            SqlCommand cmd = new SqlCommand("delete from employee where e_number =" + bh, conn);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }

@@ -62,6 +62,7 @@
             this.Menu_4.Name = "Menu_4";
             this.Menu_4.Size = new System.Drawing.Size(68, 21);
             this.Menu_4.Text = "人事管理";
+            this.Menu_4.Click += new System.EventHandler(this.Menu_4_Click);
             // 
             // Tool_Stuffbusic
             // 
@@ -94,19 +95,19 @@
             // Tool_NewLogon
             // 
             this.Tool_NewLogon.Name = "Tool_NewLogon";
-            this.Tool_NewLogon.Size = new System.Drawing.Size(152, 22);
+            this.Tool_NewLogon.Size = new System.Drawing.Size(124, 22);
             this.Tool_NewLogon.Text = "重新登录";
             // 
             // Tool_Setup
             // 
             this.Tool_Setup.Name = "Tool_Setup";
-            this.Tool_Setup.Size = new System.Drawing.Size(152, 22);
+            this.Tool_Setup.Size = new System.Drawing.Size(124, 22);
             this.Tool_Setup.Text = "用户设置";
             // 
             // Menu_9
             // 
             this.Menu_9.Name = "Menu_9";
-            this.Menu_9.Size = new System.Drawing.Size(152, 22);
+            this.Menu_9.Size = new System.Drawing.Size(124, 22);
             this.Menu_9.Text = "系统退出";
             // 
             // 退出ToolStripMenuItem
