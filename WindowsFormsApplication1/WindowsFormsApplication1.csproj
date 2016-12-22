@@ -78,6 +78,11 @@
     <Compile Include="Folder1\useradd.Designer.cs">
       <DependentUpon>useradd.cs</DependentUpon>
     </Compile>
+    <Compile Include="RSGLDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RSGLDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Folder1\Find.resx">
       <DependentUpon>Find.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +116,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="RSGLDataSet.xsc">
+      <DependentUpon>RSGLDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RSGLDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RSGLDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RSGLDataSet.xss">
+      <DependentUpon>RSGLDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
