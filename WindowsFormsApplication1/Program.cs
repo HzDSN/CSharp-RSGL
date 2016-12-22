@@ -19,4 +19,9 @@ namespace WindowsFormsApplication1
             Application.Run(new login());
         }
     }
+
+    static class temp
+    {
+        public static string e_num=string.Empty;
+    }
 }

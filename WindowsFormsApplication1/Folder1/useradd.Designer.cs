@@ -55,6 +55,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "保存";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
@@ -76,6 +77,7 @@
             this.text_Pass.PasswordChar = '*';
             this.text_Pass.Size = new System.Drawing.Size(100, 21);
             this.text_Pass.TabIndex = 4;
+            this.text_Pass.TextChanged += new System.EventHandler(this.text_Pass_TextChanged);
             // 
             // text_Name
             // 
@@ -83,6 +85,7 @@
             this.text_Name.Name = "text_Name";
             this.text_Name.Size = new System.Drawing.Size(100, 21);
             this.text_Name.TabIndex = 3;
+            this.text_Name.TextChanged += new System.EventHandler(this.text_Name_TextChanged);
             // 
             // label2
             // 
@@ -112,6 +115,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "useradd";
             this.Text = "useradd";
+            this.Load += new System.EventHandler(this.useradd_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

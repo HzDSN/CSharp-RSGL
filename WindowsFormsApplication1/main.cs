@@ -15,64 +15,10 @@ namespace WindowsFormsApplication1
         public main()
         {
             InitializeComponent();
-        }
-
-        private void Button_Stuffbusic_Click(object sender, EventArgs e)
-        {
+          
 
         }
-
-        private void Button_Stufind_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button_ClewBargain_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Botton_AddressBook_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Botton_DayWordPad_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button_Close_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void 系统退出ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Tool_Setup_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Tool_Folk_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Tool_ClewBirthday_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Tool_ClewBargain_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Tool_Stuffbusic_Click(object sender, EventArgs e)
+        private void main_Load(object sender, EventArgs e)
         {
 
         }
@@ -82,47 +28,69 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void Tool_Stusum_Click(object sender, EventArgs e)
+        private void 登出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.OK == MessageBox.Show("你确定要登出吗？", "登出提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
+            {
+                this.FormClosing -= new System.Windows.Forms.FormClosingEventHandler(this.main_FormClosing);
+                login show = new login();
+                show.Show();
+                this.Close();
+
+
+            }
+        }
+        private void 关闭系统ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.OK == MessageBox.Show("你确定要关闭应用程序吗？", "关闭提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
+            {
+                this.FormClosing -= new System.Windows.Forms.FormClosingEventHandler(this.main_FormClosing);
+                Application.Exit();
+            }
+
+        }
+
+        private void main_FormClosed(object sender, FormClosedEventArgs e)
         {
 
         }
 
-        private void Tool_DayWordPad_Click(object sender, EventArgs e)
+        private void main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (DialogResult.OK == MessageBox.Show("你确定要关闭应用程序吗？", "关闭提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
+            {
+                this.FormClosing -= new System.Windows.Forms.FormClosingEventHandler(this.main_FormClosing);
+                Application.Exit();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void Tool_Stuffbusic_Click(object sender, EventArgs e)
+        {
+            ManFile child = new ManFile();
+            child.TopLevel = false;
+            child.Dock = System.Windows.Forms.DockStyle.Fill;
+            child.FormBorderStyle = FormBorderStyle.None;
+            child.Parent = this.panel;
+            this.panel.Controls.Add(child);
+            child.Show();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }
 
-        private void Tool_AddressBook_Click(object sender, EventArgs e)
+        private void 我得ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            WindowsFormsApplication1.Folder1.userabc f2 = new WindowsFormsApplication1.Folder1.userabc();
+            f2.Show();
         }
 
-        private void Tool_Back_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Tool_Clear_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Tool_Counter_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Tool_WordBook_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Tool_NewLogon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Menu_4_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

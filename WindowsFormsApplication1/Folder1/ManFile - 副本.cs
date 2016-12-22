@@ -13,7 +13,6 @@ namespace WindowsFormsApplication1
 {
     public partial class ManFile : Form
     {
-        SqlConnection lo_conn = new SqlConnection("Server=DESKTOP-RGQI6KB;Database=RSGL;uid=sa;pwd=123456");
         public ManFile()
         {
             InitializeComponent();
@@ -203,40 +202,45 @@ namespace WindowsFormsApplication1
             }
 
 
-
-            //lo_conn.Open();
-            //SqlCommand lo_cmd = new SqlCommand("select * from employee where "+ tj + "= "+ "'" + comboBox2.Text + "'", lo_conn);
-            //SqlDataReader lo_reader = lo_cmd.ExecuteReader();
+            SqlConnection lo_conn = new SqlConnection("Server=DESKTOP-RGQI6KB;Database=RSGL;uid=sa;pwd=123456");
+            SqlCommand lo_cmd = new SqlCommand("select * from employee where " + tj + "= " + "'" + comboBox2.Text + "'", lo_conn);
             /*
-            if (lo_reader.HasRows)
+            using (lo_conn)
             {
-                while (lo_reader.Read())
-                {
-                    S_0.Text += lo_reader["e_number"];
-                    S_1.Text += lo_reader["e_name"];
-                    S_2.Text += lo_reader["e_nation"];
-                    S_3.Text += lo_reader["e_birthday"];
-                    DateTime a = Convert.ToDateTime(S_3.Text);
-                    S_3.Text = a.Year + "-" + a.Month + "-" + a.Day;
-                    S_4.Text += lo_reader["e_age"];
-                    S_5.Text += lo_reader["e_gender"];
-                    S_6.Text += lo_reader["e_education"];
-                    S_7.Text += lo_reader["e_political"];
-                    S_8.Text += lo_reader["e_IDnumber"];
-                    S_9.Text += lo_reader["e_homeaddress"];
-                    S_10.Text += lo_reader["e_salary"];
-                    S_11.Text += lo_reader["e_telephonenumber"];
-                    textBox2.Text = "查询成功";
-                }
+                lo_conn.Open();
+                
+                SqlDataReader lo_reader = lo_cmd.ExecuteReader();
 
+                if (lo_reader.HasRows)
+                {
+                    while (lo_reader.Read())
+                    {
+                        S_0.Text += lo_reader["e_number"];
+                        S_1.Text += lo_reader["e_name"];
+                        S_2.Text += lo_reader["e_nation"];
+                        S_3.Text += lo_reader["e_birthday"];
+                        DateTime a = Convert.ToDateTime(S_3.Text);
+                        S_3.Text = a.Year + "-" + a.Month + "-" + a.Day;
+                        S_4.Text += lo_reader["e_age"];
+                        S_5.Text += lo_reader["e_gender"];
+                        S_6.Text += lo_reader["e_education"];
+                        S_7.Text += lo_reader["e_political"];
+                        S_8.Text += lo_reader["e_IDnumber"];
+                        S_9.Text += lo_reader["e_homeaddress"];
+                        S_10.Text += lo_reader["e_salary"];
+                        S_11.Text += lo_reader["e_telephonenumber"];
+                        textBox2.Text = "查询成功";
+                    }
+
+                }
+                else { textBox2.Text = "未查询到数据"; }
             }
-            else { textBox2.Text = "未查询到数据"; }
             */
             using (lo_conn)
             {
                 lo_conn.ConnectionString = "Server=DESKTOP-RGQI6KB;Database=RSGL;uid=sa;pwd=123456";
                 lo_conn.Open();
-                SqlCommand lo_cmd = new SqlCommand("select * from employee where " + tj + "= " + "'" + comboBox2.Text + "'", lo_conn);
+
                 SqlDataAdapter da = new SqlDataAdapter(lo_cmd);
                 DataSet ds = new DataSet();
                 da.Fill(ds, "e_number");
@@ -364,66 +368,8 @@ namespace WindowsFormsApplication1
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            S_0.Text = string.Empty;
-            S_1.Text = string.Empty;
-            S_2.Text = string.Empty;
-            S_3.Text = string.Empty;
-            S_4.Text = string.Empty;
-            S_5.Text = string.Empty;
-            S_6.Text = string.Empty;
-            S_7.Text = string.Empty;
-            S_8.Text = string.Empty;
-            S_9.Text = string.Empty;
-            S_10.Text = string.Empty;
-            S_11.Text = string.Empty;
+            
 
-            string tj = string.Empty;
-            switch (comboBox1.Text)
-            {
-                case "按工号查询": tj = "e_number"; break;
-                case "按姓名查询": tj = "e_name"; break;
-                case "按性别查询": tj = "e_gender"; break;
-                case "按民族查询": tj = "e_nation"; break;
-                case "按文化程度查询": tj = "e_education"; break;
-                case "按政治面貌查询": tj = "e_political"; break;
-
-            }
-            SqlConnection lo_conn = new SqlConnection("Server=DESKTOP-RGQI6KB;Database=RSGL;uid=sa;pwd=123456");
-            string xyz = (string)dataGridView1.CurrentRow.Cells[0].Value;
-            string cmd = "select * from employee where e_number = '" + xyz + "'";
-            //MessageBox.Show(xyz);
-            SqlCommand lo_cmd = new SqlCommand(cmd, lo_conn);
-
-            using (lo_conn)
-            {
-                lo_conn.Open();
-
-                SqlDataReader lo_reader = lo_cmd.ExecuteReader();
-
-                if (lo_reader.HasRows)
-                {
-                    while (lo_reader.Read())
-                    {
-                        S_0.Text += lo_reader["e_number"];
-                        S_1.Text += lo_reader["e_name"];
-                        S_2.Text += lo_reader["e_nation"];
-                        S_3.Text += lo_reader["e_birthday"];
-                        DateTime a = Convert.ToDateTime(S_3.Text);
-                        S_3.Text = a.Year + "-" + a.Month + "-" + a.Day;
-                        S_4.Text += lo_reader["e_age"];
-                        S_5.Text += lo_reader["e_gender"];
-                        S_6.Text += lo_reader["e_education"];
-                        S_7.Text += lo_reader["e_political"];
-                        S_8.Text += lo_reader["e_IDnumber"];
-                        S_9.Text += lo_reader["e_homeaddress"];
-                        S_10.Text += lo_reader["e_salary"];
-                        S_11.Text += lo_reader["e_telephonenumber"];
-                        textBox2.Text = "查询成功";
-                    }
-
-                }
-                else { textBox2.Text = "未查询到数据"; }
-            }
         }
     }
 }

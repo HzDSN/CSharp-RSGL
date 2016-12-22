@@ -52,6 +52,18 @@
     <Compile Include="Folder1\Find.Designer.cs">
       <DependentUpon>Find.cs</DependentUpon>
     </Compile>
+    <Compile Include="Folder1\repassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Folder1\repassword.Designer.cs">
+      <DependentUpon>repassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Folder1\userabc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Folder1\userabc.Designer.cs">
+      <DependentUpon>userabc.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,13 +90,19 @@
     <Compile Include="Folder1\useradd.Designer.cs">
       <DependentUpon>useradd.cs</DependentUpon>
     </Compile>
-    <Compile Include="RSGLDataSet.Designer.cs">
+    <Compile Include="RSGLDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RSGLDataSet.xsd</DependentUpon>
+      <DependentUpon>RSGLDataSet1.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Folder1\Find.resx">
       <DependentUpon>Find.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Folder1\repassword.resx">
+      <DependentUpon>repassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Folder1\userabc.resx">
+      <DependentUpon>userabc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
@@ -116,16 +134,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="RSGLDataSet.xsc">
-      <DependentUpon>RSGLDataSet.xsd</DependentUpon>
+    <None Include="RSGLDataSet1.xsc">
+      <DependentUpon>RSGLDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="RSGLDataSet.xsd">
+    <None Include="RSGLDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>RSGLDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>RSGLDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="RSGLDataSet.xss">
-      <DependentUpon>RSGLDataSet.xsd</DependentUpon>
+    <None Include="RSGLDataSet1.xss">
+      <DependentUpon>RSGLDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
