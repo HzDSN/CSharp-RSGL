@@ -236,7 +236,10 @@ namespace WindowsFormsApplication1
             {
                 lo_conn.ConnectionString = "Server=DESKTOP-RGQI6KB;Database=RSGL;uid=sa;pwd=123456";
                 lo_conn.Open();
-                SqlCommand lo_cmd = new SqlCommand("select * from employee where " + tj + "= " + "'" + comboBox2.Text + "'", lo_conn);
+                string x;
+                x = "select * from employee where " + tj + " LIKE " + "'%" + comboBox2.Text +  "%'";
+                //MessageBox.Show(x);
+                SqlCommand lo_cmd = new SqlCommand(x, lo_conn);
                 SqlDataAdapter da = new SqlDataAdapter(lo_cmd);
                 DataSet ds = new DataSet();
                 da.Fill(ds, "e_number");
@@ -364,6 +367,8 @@ namespace WindowsFormsApplication1
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+            // MessageBox.Show(Convert.ToString( dataGridView1.FirstDisplayedCell.Value));
+
             S_0.Text = string.Empty;
             S_1.Text = string.Empty;
             S_2.Text = string.Empty;
@@ -388,9 +393,19 @@ namespace WindowsFormsApplication1
                 case "按政治面貌查询": tj = "e_political"; break;
 
             }
+            string cmd = string.Empty;
             SqlConnection lo_conn = new SqlConnection("Server=DESKTOP-RGQI6KB;Database=RSGL;uid=sa;pwd=123456");
-            string xyz = (string)dataGridView1.CurrentRow.Cells[0].Value;
-            string cmd = "select * from employee where e_number = '" + xyz + "'";
+
+
+
+            string xyz = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
+            cmd = "select * from employee where e_number = '" + xyz + "'";
+
+
+
+
+
+
             //MessageBox.Show(xyz);
             SqlCommand lo_cmd = new SqlCommand(cmd, lo_conn);
 
@@ -424,6 +439,18 @@ namespace WindowsFormsApplication1
                 }
                 else { textBox2.Text = "未查询到数据"; }
             }
+            /* #region a
+    private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+
+    {
+
+        //if (Convert.ToInt32((string)dataGridView1.FirstDisplayedCell.Value) <= Convert.ToInt32((string)dataGridView1.CurrentRow.Cells[0].Value))
+        //{
+
         }
+    }
+    #endregion*/
+        }
+        // }
     }
 }

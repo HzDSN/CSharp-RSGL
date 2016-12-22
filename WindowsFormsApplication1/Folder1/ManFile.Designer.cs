@@ -68,6 +68,10 @@
             this.Col_StuffName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.enumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rSGLDataSet = new WindowsFormsApplication1.RSGLDataSet();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,21 +82,17 @@
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.rSGLDataSet = new WindowsFormsApplication1.RSGLDataSet();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeeTableAdapter = new WindowsFormsApplication1.RSGLDataSetTableAdapters.employeeTableAdapter();
-            this.enumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rSGLDataSet)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rSGLDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -466,6 +466,28 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
+            // enumberDataGridViewTextBoxColumn
+            // 
+            this.enumberDataGridViewTextBoxColumn.DataPropertyName = "e_number";
+            this.enumberDataGridViewTextBoxColumn.HeaderText = "e_number";
+            this.enumberDataGridViewTextBoxColumn.Name = "enumberDataGridViewTextBoxColumn";
+            // 
+            // enameDataGridViewTextBoxColumn
+            // 
+            this.enameDataGridViewTextBoxColumn.DataPropertyName = "e_name";
+            this.enameDataGridViewTextBoxColumn.HeaderText = "e_name";
+            this.enameDataGridViewTextBoxColumn.Name = "enameDataGridViewTextBoxColumn";
+            // 
+            // employeeBindingSource
+            // 
+            this.employeeBindingSource.DataMember = "employee";
+            this.employeeBindingSource.DataSource = this.rSGLDataSet;
+            // 
+            // rSGLDataSet
+            // 
+            this.rSGLDataSet.DataSetName = "RSGLDataSet";
+            this.rSGLDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(71, 251);
@@ -570,31 +592,9 @@
             this.textBox2.Size = new System.Drawing.Size(573, 14);
             this.textBox2.TabIndex = 8;
             // 
-            // rSGLDataSet
-            // 
-            this.rSGLDataSet.DataSetName = "RSGLDataSet";
-            this.rSGLDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataMember = "employee";
-            this.employeeBindingSource.DataSource = this.rSGLDataSet;
-            // 
             // employeeTableAdapter
             // 
             this.employeeTableAdapter.ClearBeforeFill = true;
-            // 
-            // enumberDataGridViewTextBoxColumn
-            // 
-            this.enumberDataGridViewTextBoxColumn.DataPropertyName = "e_number";
-            this.enumberDataGridViewTextBoxColumn.HeaderText = "e_number";
-            this.enumberDataGridViewTextBoxColumn.Name = "enumberDataGridViewTextBoxColumn";
-            // 
-            // enameDataGridViewTextBoxColumn
-            // 
-            this.enameDataGridViewTextBoxColumn.DataPropertyName = "e_name";
-            this.enameDataGridViewTextBoxColumn.HeaderText = "e_name";
-            this.enameDataGridViewTextBoxColumn.Name = "enameDataGridViewTextBoxColumn";
             // 
             // ManFile
             // 
@@ -616,12 +616,12 @@
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rSGLDataSet)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rSGLDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApplication1
 {
     public partial class main : Form
     {
+        public string contsql = "Server=DESKTOP-RGQI6KB;Database=RSGL;uid=sa;pwd=123456";
         public main()
         {
             InitializeComponent();
@@ -70,13 +72,39 @@ namespace WindowsFormsApplication1
 
         private void Tool_Stuffbusic_Click(object sender, EventArgs e)
         {
-            ManFile child = new ManFile();
-            child.TopLevel = false;
-            child.Dock = System.Windows.Forms.DockStyle.Fill;
-            child.FormBorderStyle = FormBorderStyle.None;
-            child.Parent = this.panel;
-            this.panel.Controls.Add(child);
-            child.Show();
+            login login_username = new login();
+            SqlConnection mysql = new SqlConnection(contsql);
+            mysql.Open();
+            SqlCommand mycmd = new SqlCommand("SELECT * FROM position ", mysql);
+            SqlDataReader sqldr = mycmd.ExecuteReader();
+            while (sqldr.Read())
+            {
+                if (temp.e_num == sqldr["e_number"].ToString())
+                {
+                    string M_str_sql_position = sqldr["e_position"].ToString();
+                    if (M_str_sql_position == "经理")
+                    {
+                        ManFile child = new ManFile();
+                        child.TopLevel = false;
+                        child.Dock = System.Windows.Forms.DockStyle.Fill;
+                        child.FormBorderStyle = FormBorderStyle.None;
+                        child.Parent = this.panel;
+                        this.panel.Controls.Add(child);
+                        child.Show();
+                    }
+                    else if (M_str_sql_position == "员工")
+                    {
+                        WindowsFormsApplication1.Folder1.userabc child = new WindowsFormsApplication1.Folder1.userabc();
+                        child.TopLevel = false;
+                        child.Dock = System.Windows.Forms.DockStyle.Fill;
+                        child.FormBorderStyle = FormBorderStyle.None;
+                        child.Parent = this.panel;
+                        this.panel.Controls.Add(child);
+                        child.Show();
+                    }
+                }
+            }
+
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
