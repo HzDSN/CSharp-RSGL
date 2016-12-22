@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.Sut_Save = new System.Windows.Forms.Button();
-            this.Sut_Cancel = new System.Windows.Forms.Button();
             this.Sut_Delete = new System.Windows.Forms.Button();
             this.Sut_Amend = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -48,11 +48,8 @@
             this.S_1 = new System.Windows.Forms.TextBox();
             this.S_0 = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.Img_Save = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
-            this.Img_Clear = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
-            this.S_Photo = new System.Windows.Forms.PictureBox();
             this.S_5 = new System.Windows.Forms.ComboBox();
             this.S_6 = new System.Windows.Forms.ComboBox();
             this.S_3 = new System.Windows.Forms.MaskedTextBox();
@@ -69,7 +66,6 @@
             this.Ind_Mome = new System.Windows.Forms.TextBox();
             this.Col_StuffName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -85,7 +81,6 @@
             this.groupBox4.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.S_Photo)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -96,29 +91,9 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // Sut_Save
-            // 
-            this.Sut_Save.Enabled = false;
-            this.Sut_Save.Location = new System.Drawing.Point(448, 17);
-            this.Sut_Save.Name = "Sut_Save";
-            this.Sut_Save.Size = new System.Drawing.Size(75, 23);
-            this.Sut_Save.TabIndex = 4;
-            this.Sut_Save.Text = "保存";
-            this.Sut_Save.UseVisualStyleBackColor = true;
-            // 
-            // Sut_Cancel
-            // 
-            this.Sut_Cancel.Enabled = false;
-            this.Sut_Cancel.Location = new System.Drawing.Point(339, 17);
-            this.Sut_Cancel.Name = "Sut_Cancel";
-            this.Sut_Cancel.Size = new System.Drawing.Size(75, 23);
-            this.Sut_Cancel.TabIndex = 3;
-            this.Sut_Cancel.Text = "取消";
-            this.Sut_Cancel.UseVisualStyleBackColor = true;
-            // 
             // Sut_Delete
             // 
-            this.Sut_Delete.Location = new System.Drawing.Point(230, 17);
+            this.Sut_Delete.Location = new System.Drawing.Point(308, 17);
             this.Sut_Delete.Name = "Sut_Delete";
             this.Sut_Delete.Size = new System.Drawing.Size(75, 23);
             this.Sut_Delete.TabIndex = 2;
@@ -128,7 +103,7 @@
             // 
             // Sut_Amend
             // 
-            this.Sut_Amend.Location = new System.Drawing.Point(121, 17);
+            this.Sut_Amend.Location = new System.Drawing.Point(160, 17);
             this.Sut_Amend.Name = "Sut_Amend";
             this.Sut_Amend.Size = new System.Drawing.Size(75, 23);
             this.Sut_Amend.TabIndex = 1;
@@ -138,14 +113,12 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.Sut_Save);
-            this.groupBox5.Controls.Add(this.Sut_Cancel);
             this.groupBox5.Controls.Add(this.Sut_Delete);
             this.groupBox5.Controls.Add(this.Sut_Amend);
             this.groupBox5.Controls.Add(this.Sut_Add);
             this.groupBox5.Location = new System.Drawing.Point(10, 241);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(539, 46);
+            this.groupBox5.Size = new System.Drawing.Size(388, 46);
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             // 
@@ -165,7 +138,7 @@
             this.groupBox4.Controls.Add(this.tabControl1);
             this.groupBox4.Location = new System.Drawing.Point(187, 58);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(554, 290);
+            this.groupBox4.Size = new System.Drawing.Size(398, 290);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             // 
@@ -176,7 +149,7 @@
             this.tabControl1.Location = new System.Drawing.Point(6, 17);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(539, 227);
+            this.tabControl1.Size = new System.Drawing.Size(392, 227);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -192,11 +165,8 @@
             this.tabPage1.Controls.Add(this.S_1);
             this.tabPage1.Controls.Add(this.S_0);
             this.tabPage1.Controls.Add(this.label30);
-            this.tabPage1.Controls.Add(this.Img_Save);
             this.tabPage1.Controls.Add(this.label29);
-            this.tabPage1.Controls.Add(this.Img_Clear);
             this.tabPage1.Controls.Add(this.label25);
-            this.tabPage1.Controls.Add(this.S_Photo);
             this.tabPage1.Controls.Add(this.S_5);
             this.tabPage1.Controls.Add(this.S_6);
             this.tabPage1.Controls.Add(this.S_3);
@@ -212,7 +182,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(531, 201);
+            this.tabPage1.Size = new System.Drawing.Size(384, 201);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "职工基本信息";
             // 
@@ -293,16 +263,6 @@
             this.label30.TabIndex = 77;
             this.label30.Text = "薪资：";
             // 
-            // Img_Save
-            // 
-            this.Img_Save.Enabled = false;
-            this.Img_Save.Location = new System.Drawing.Point(391, 168);
-            this.Img_Save.Name = "Img_Save";
-            this.Img_Save.Size = new System.Drawing.Size(75, 23);
-            this.Img_Save.TabIndex = 71;
-            this.Img_Save.Text = "选择图片";
-            this.Img_Save.UseVisualStyleBackColor = true;
-            // 
             // label29
             // 
             this.label29.AutoSize = true;
@@ -312,16 +272,6 @@
             this.label29.TabIndex = 69;
             this.label29.Text = "家庭地址：";
             // 
-            // Img_Clear
-            // 
-            this.Img_Clear.Enabled = false;
-            this.Img_Clear.Location = new System.Drawing.Point(475, 168);
-            this.Img_Clear.Name = "Img_Clear";
-            this.Img_Clear.Size = new System.Drawing.Size(45, 23);
-            this.Img_Clear.TabIndex = 68;
-            this.Img_Clear.Text = "清除";
-            this.Img_Clear.UseVisualStyleBackColor = true;
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -330,16 +280,6 @@
             this.label25.Size = new System.Drawing.Size(41, 12);
             this.label25.TabIndex = 60;
             this.label25.Text = "手机：";
-            // 
-            // S_Photo
-            // 
-            this.S_Photo.BackColor = System.Drawing.Color.LavenderBlush;
-            this.S_Photo.Location = new System.Drawing.Point(391, 12);
-            this.S_Photo.Name = "S_Photo";
-            this.S_Photo.Size = new System.Drawing.Size(129, 149);
-            this.S_Photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.S_Photo.TabIndex = 58;
-            this.S_Photo.TabStop = false;
             // 
             // S_5
             // 
@@ -454,7 +394,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(531, 201);
+            this.tabPage6.Size = new System.Drawing.Size(384, 201);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "个人简历";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -465,7 +405,7 @@
             this.Ind_Mome.Location = new System.Drawing.Point(3, 3);
             this.Ind_Mome.Multiline = true;
             this.Ind_Mome.Name = "Ind_Mome";
-            this.Ind_Mome.Size = new System.Drawing.Size(525, 195);
+            this.Ind_Mome.Size = new System.Drawing.Size(378, 195);
             this.Ind_Mome.TabIndex = 0;
             // 
             // Col_StuffName
@@ -480,22 +420,28 @@
             this.Col_ID.HeaderText = "编号";
             this.Col_ID.Name = "Col_ID";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(122, 412);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "显示所有信息";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // dataGridView1
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_ID,
             this.Col_StuffName});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(6, 20);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
@@ -564,6 +510,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(137, 20);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // groupBox3
             // 
@@ -580,7 +527,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(464, 13);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(157, 23);
+            this.button2.Size = new System.Drawing.Size(99, 23);
             this.button2.TabIndex = 9;
             this.button2.Text = "查询";
             this.button2.UseVisualStyleBackColor = true;
@@ -595,24 +542,24 @@
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(627, 45);
+            this.groupBox1.Size = new System.Drawing.Size(573, 45);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "分类查询";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 378);
+            this.textBox2.Location = new System.Drawing.Point(12, 354);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(709, 21);
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(573, 21);
             this.textBox2.TabIndex = 8;
             // 
             // ManFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 447);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(598, 383);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -625,7 +572,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.S_Photo)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -640,8 +586,6 @@
 
         #endregion
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button Sut_Save;
-        private System.Windows.Forms.Button Sut_Cancel;
         private System.Windows.Forms.Button Sut_Delete;
         private System.Windows.Forms.Button Sut_Amend;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -649,7 +593,6 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_StuffName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_ID;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
@@ -671,11 +614,8 @@
         private System.Windows.Forms.TextBox S_1;
         private System.Windows.Forms.TextBox S_0;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Button Img_Save;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Button Img_Clear;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.PictureBox S_Photo;
         private System.Windows.Forms.ComboBox S_5;
         private System.Windows.Forms.ComboBox S_6;
         private System.Windows.Forms.MaskedTextBox S_3;
